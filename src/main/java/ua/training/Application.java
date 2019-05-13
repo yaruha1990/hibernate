@@ -15,7 +15,7 @@ public class Application {
             factory = new Configuration().configure().buildSessionFactory();
             DAO<Author, Integer> authorDAO = new AuthorDAO(factory);
 
-            Author author = authorDAO.read(3);
+            Author author = authorDAO.read(5);
             System.out.println(author);
 
         }finally {
