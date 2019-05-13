@@ -10,6 +10,12 @@
             <generator class="identity"/>
         </id>
         <property name="name" column="name"/>
+        <property name="movieDescription" column="movie_description"/>
+        
+        <set name="movies" table="movie" cascade="all" fetch="join">
+            <key column="description" property-ref="movieDescription"></key>
+            <one-to-many class="ua.training.entity.Movie" />
+        </set>
     </class>
 
 </hibernate-mapping>

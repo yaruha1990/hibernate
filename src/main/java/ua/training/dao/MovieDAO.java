@@ -30,9 +30,9 @@ public class MovieDAO implements DAO<Movie, Integer> {
 
             Movie movie = session.get(Movie.class, id);
 
-            if (movie != null){
-                Hibernate.initialize(movie.getAuthor());
-            }
+//            if (movie != null){
+//                Hibernate.initialize(movie.getAuthor());
+//            }
 
             return movie != null ? movie : new Movie();
 

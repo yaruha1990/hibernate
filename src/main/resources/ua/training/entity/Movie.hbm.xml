@@ -11,9 +11,6 @@
         </id>
         <property name="title" column="title"/>
         <property name="description" column="description"/>
-
-        <many-to-one name="author" column="author_id" class="ua.training.entity.Author" cascade="save-update" />
-
     </class>
 
 </hibernate-mapping>

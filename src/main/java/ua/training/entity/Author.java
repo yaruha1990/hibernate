@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import java.util.Set;
 
 @Data
 @ToString
@@ -12,4 +13,6 @@ import lombok.ToString;
 public class Author {
     private int id;
     private String name;
+    private String movieDescription;
+    private Set<Movie> movies;
 }
