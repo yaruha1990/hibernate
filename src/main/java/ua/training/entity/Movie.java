@@ -8,7 +8,8 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Movie {
+    private int id;
     private String title;
     private String description;
-    private int rating;
+    private Author author;
 }

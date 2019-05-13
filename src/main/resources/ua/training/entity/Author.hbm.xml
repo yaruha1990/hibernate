@@ -5,15 +5,11 @@
 
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
-    <class name="ua.training.entity.Movie" table="movie">
-        <id name="id" column="id" type="int">
+    <class name="ua.training.entity.Author" table="author">
+        <id name="id" type="int" column="id">
             <generator class="identity"/>
         </id>
-        <property name="title" column="title"/>
-        <property name="description" column="description"/>
-
-        <many-to-one name="author" column="author_id" class="ua.training.entity.Author" cascade="save-update" />
-
+        <property name="name" column="name"/>
     </class>
 
 </hibernate-mapping>

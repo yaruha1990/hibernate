@@ -1,10 +1,11 @@
 package ua.training.dao;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import ua.training.entity.Movie;
 
-public class MovieDAO implements DAO<Movie, String> {
+public class MovieDAO implements DAO<Movie, Integer> {
 
     private SessionFactory factory;
 
@@ -24,10 +25,14 @@ public class MovieDAO implements DAO<Movie, String> {
         }
     }
 
-    public Movie read(String title) {
+    public Movie read(Integer id) {
         try(Session session = factory.openSession()){
 
-            final Movie movie = session.get(Movie.class, title);
+            Movie movie = session.get(Movie.class, id);
+
+            if (movie != null){
+                Hibernate.initialize(movie.getAuthor());
+            }
 
             return movie != null ? movie : new Movie();
 

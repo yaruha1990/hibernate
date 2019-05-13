@@ -9,5 +9,6 @@
         <property name="show_sql">true</property>
 
         <mapping resource="ua/training/entity/Movie.hbm.xml"/>
+        <mapping resource="ua/training/entity/Author.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
